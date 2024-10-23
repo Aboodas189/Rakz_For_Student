@@ -1,4 +1,6 @@
 opencv-python-headless==4.10.0.84
+python3-opencv
+libgl1 
 mediapipe==0.10.14
 numpy
 pandas
