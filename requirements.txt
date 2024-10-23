@@ -16,4 +16,4 @@ scipy
 openai
 beautifulsoup4
 requests
-openai-whisper
+openai-whisper==20240930
