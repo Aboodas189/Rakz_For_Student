@@ -300,10 +300,16 @@ def process_uploaded_video(video_file):
 
 import plotly.graph_objects as go
 
+import plotly.graph_objects as go
+
 def create_dashboard(df, avg_focus_score_before_quiz, avg_focus_score_after_quiz):
-    # Focus Score Trend
+    # Downsample the data for readability
+    sampled_data = df['focus_score'][0::30]  # Take every 30th data point
+    sampled_labels = df['timestamp_min'][0::30]  # Corresponding timestamps
+
+    # Create a Plotly figure
     fig_focus = go.Figure()
-    fig_focus.add_trace(go.Scatter(x=df['timestamp_min'], y=df['focus_score'], mode='lines+markers', name='Score'))
+    fig_focus.add_trace(go.Scatter(x=sampled_labels, y=sampled_data, mode='lines+markers', name='Score'))
     
     fig_focus.update_layout(
         xaxis_title='Time (minutes)',
@@ -311,9 +317,9 @@ def create_dashboard(df, avg_focus_score_before_quiz, avg_focus_score_after_quiz
         yaxis_range=[0, 100],
         showlegend=True,
         xaxis=dict(
-            tickmode='auto',  # Automatically decide where ticks are placed
-            nticks=10,        # Set a reasonable number of ticks
-            tickformat=".2f"  # Format the x-axis values to 4 decimal places
+            tickmode='auto',
+            nticks=10,
+            tickformat=".4f"
         )
     )
     
