@@ -1,4 +1,3 @@
-import cv2 as cv
 import mediapipe as mp
 import numpy as np
 import math
@@ -21,6 +20,8 @@ import warnings
 import openai
 import json
 from bs4 import BeautifulSoup
+import cv2 as cv
+
 
 
 warnings.filterwarnings("ignore", message="FP16 is not supported on CPU; using FP32 instead")
