@@ -11,9 +11,9 @@ av
 moviepy
 vosk
 pydub
-tempfile
-whisper
+ffmpeg-python
 scipy
 openai
 beautifulsoup4
 requests
+whisper
