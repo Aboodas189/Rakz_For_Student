@@ -16,4 +16,4 @@ scipy
 openai
 beautifulsoup4
 requests
-whisper
+openai-whisper
